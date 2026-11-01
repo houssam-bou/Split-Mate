@@ -77,4 +77,21 @@ function displayGroupes(groups) {
           `
   });
 }
+function deleteGroupeButton() {
+  let deleteGroupeBtns = groupesList.querySelectorAll("button");
+  deleteGroupeBtns.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      let deletedGroupeId = e.target.getAttribute("data-id");
+      
+      groups = groups.filter((groupe) => groupe.groupeId != deletedGroupeId);
+      
+      displayGroupes(groups);
+      deleteGroupeButton();
+    });
+  });
+}
+
+
+
 displayGroupes(groups);
+deleteGroupeButton();
