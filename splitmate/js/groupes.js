@@ -54,6 +54,9 @@ if (groupesForm) {
   });
 }
 function displayGroupes(groups) {
+  if (!groupesList) {
+    return
+  };
   groupesList.innerHTML = "";
   if (groups.length <= 0) {
     alert("empty !!");
@@ -78,13 +81,16 @@ function displayGroupes(groups) {
   });
 }
 function deleteGroupeButton() {
+  if (!groupesList) {
+    return;
+  };
   let deleteGroupeBtns = groupesList.querySelectorAll("button");
   deleteGroupeBtns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       let deletedGroupeId = e.target.getAttribute("data-id");
-      
+
       groups = groups.filter((groupe) => groupe.groupeId != deletedGroupeId);
-      
+
       displayGroupes(groups);
       deleteGroupeButton();
     });
