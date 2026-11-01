@@ -42,12 +42,12 @@ button {
     text-align: none;
 }
 
-.kio{
+.kio {
     display: block;
     margin-left: 40px;
     margin-right: 40px;
     padding-top: 10px;
-    
+
 }
 
 .kio p {
@@ -65,7 +65,7 @@ button {
     color: rgb(217, 217, 222);
     margin-top: 10px;
     margin-bottom: 10px;
-  
+
 }
 
 .hero-container {
@@ -212,6 +212,7 @@ button {
     color: rgb(217, 217, 222);
     margin-left: 40px;
 }
+
 .acces-rapide-container {
     width: 100%;
     margin: 20px auto;
@@ -222,10 +223,11 @@ button {
     justify-content: center;
     gap: 20px;
 }
-.acces-rapide-container a{
- font-family: Arial, Helvetica, sans-serif;
- text-decoration: none;
- color: white;
+
+.acces-rapide-container a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
 }
 
 .acces-rapide-container nav div {
@@ -245,7 +247,7 @@ body {
     background-color: #0a0921;
 }
 
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -274,17 +276,17 @@ button a {
     text-decoration: none;
 }
 
-.contenue{
+.contenue {
     display: block;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
     width: 500px;
     height: 400px;
-    background-color: #1e293b; 
-    border: 1px solid #334155; 
-    border-radius: 12px; 
-    padding: 30px; 
-    margin-left:320px
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 30px;
+    margin-left: 320px
 }
 
 #expense-form {
@@ -297,7 +299,7 @@ button a {
 #expense-form select {
     width: 100%;
     padding: 5px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 label[for="expense-title"] {
@@ -342,6 +344,7 @@ button {
     font-family: Arial, sans-serif;
     color: white;
 }
+
 #groupes-form {
     width: 500px;
     margin: 40px auto;
@@ -349,12 +352,14 @@ button {
     background-color: #1e293b;
     border-radius: 15px;
 }
+
 #groupes-form label {
     display: block;
     margin-top: 15px;
     color: white;
     font-family: Arial, sans-serif;
 }
+
 #groupes-form input,
 #groupes-form select {
     width: 100%;
@@ -365,6 +370,7 @@ button {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
 #groupes-form button {
     margin-top: 20px;
     padding: 12px 25px;
@@ -378,4 +384,67 @@ button {
 #groupes-form h1 {
     color: white;
     font-family: Arial, sans-serif;
+}
+
+/* Groups container */
+#groupes-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Group card */
+#groupes-container li {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    font-family: sans-serif;
+
+}
+
+#div-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+#div-delete {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* Group name */
+#groupes-container h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+/* Description */
+#groupes-container p {
+    color: #060d17;
+    font-size: 16px;
+    margin-bottom: 18px;
+    font-family: sans-serif;
+}
+
+/* delete button */
+#groupes-container button {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 9px 15px;
+    border-radius: 7px;
+
+    font-family: sans-serif;
+}
+.liste_de_groupe h1{
+color: #ccc;
+font-family: sans-serif;
+display: flex;
+justify-content: center;
 }
