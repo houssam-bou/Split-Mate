@@ -1,23 +1,24 @@
 import { groups } from "./groupes.js";
 import { membres } from "./membres.js";
-
-displayDashboard();
-
+import { expenses } from "./depenses.js";
 
 
 
-console.log(groups, membres);
-console.log(groups.length);
-let dashboardContainer = document.getElementsByClassName("hero-container");
-console.log(dashboardContainer);
-let dashboardGroupCount = document.getElementById("dashboard-groupes-count");
-let dashboardMembreCount = document.getElementById("dashboard-members-count");
-
+const dashboardGroupCount = document.getElementById("dashboard-groupes-count");
+const dashboardMembreCount = document.getElementById("dashboard-members-count");
+const dashboardDepensesTotal = document.getElementById("dashboard-depenses-total");
+function calculateTotalAmount() {
+    let totalAmount = 0;
+    expenses.forEach((expense) => {
+        totalAmount += expense.montant;
+    })
+    dashboardDepensesTotal.textContent = `${totalAmount} DH`;
+}
 function displayDashboard() {
-    console.log(dashboardMembreCount.textContent)
-    console.log(dashboardGroupCount.textContent);
+
     dashboardGroupCount.textContent = groups.length;
     dashboardMembreCount.textContent = membres.length;
+    calculateTotalAmount();
 }
-
+displayDashboard();
 
