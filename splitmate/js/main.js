@@ -3,7 +3,7 @@ import { membres } from "./membres.js";
 import { expenses } from "./depenses.js";
 
 
-const dashboardContainer = document.getElementsByClassName("hero-container");
+
 const dashboardGroupCount = document.getElementById("dashboard-groupes-count");
 const dashboardMembreCount = document.getElementById("dashboard-members-count");
 const dashboardDepensesTotal = document.getElementById("dashboard-depenses-total");
@@ -20,6 +20,5 @@ function displayDashboard() {
     dashboardMembreCount.textContent = membres.length;
     calculateTotalAmount();
 }
-
 displayDashboard();
 
