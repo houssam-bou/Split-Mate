@@ -28,7 +28,7 @@ const groupeDescription = document.getElementById("groupe-description");
 const deviseSelect = document.getElementById("devise-select");
 const dateGroupes = document.getElementById("date-groupes");
 const groupesList = document.getElementById("groupes-container");
-let groupeIdCounter = 4;
+let groupeIdCounter = Date.now();
 
 if (groupesForm) {
   groupesForm.addEventListener("submit", function (event) {
@@ -51,6 +51,7 @@ if (groupesForm) {
     console.log(groups);
     groupesForm.reset();
     displayGroupes(groups);
+    deleteGroupeButton()
   });
 }
 function displayGroupes(groups) {
@@ -71,6 +72,7 @@ function displayGroupes(groups) {
                   </div>
                   <div>
                   <p>${groupe.description}</p>
+                  <p>la date de debute : ${groupe.dateDebut}</p>
                 </div>
                 <div id="div-delete">
                    <span class="group-currency">Devise : ${groupe.devise}</span>
@@ -96,8 +98,6 @@ function deleteGroupeButton() {
     });
   });
 }
-
-
 
 displayGroupes(groups);
 deleteGroupeButton();
