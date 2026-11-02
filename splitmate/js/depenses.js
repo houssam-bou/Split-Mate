@@ -62,6 +62,7 @@ if (depensesForm) {
     const categorieSelectValue = categorieSelect.value;
     const dateInputValue = dateInput.value;
     const paymentSelectValue = paymentSelect.value;
+    let part = montant / membres.length;
 
     
     const expense = {
@@ -74,7 +75,7 @@ if (depensesForm) {
       parts:[
         {
             memberId : memberId,
-            montant : montantInputValue
+            montant : part
         }
       ]
     };
