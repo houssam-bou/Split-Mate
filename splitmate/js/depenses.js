@@ -1,7 +1,7 @@
-
+import { membres } from "./membres.js";
 export const expenses = [
     {
-        id: 1,
+        depenseId: 1,
         groupeId: 1,
         titre: "Courses alimentaires",
         montant: 300,
@@ -15,8 +15,8 @@ export const expenses = [
         ]
     },
     {
-        id: 2,
-        groupeId: 1,
+        depenseId: 2,
+        groupeId: 2,
         titre: "Restaurant",
         montant: 180,
         categorie: "Restaurant",
@@ -29,8 +29,8 @@ export const expenses = [
         ]
     },
     {
-        id: 3,
-        groupeId: 2,
+        depenseId: 3,
+        groupeId: 3,
         titre: "Transport",
         montant: 120,
         categorie: "Transport",
@@ -40,18 +40,47 @@ export const expenses = [
             { membreId: 4, montant: 60 },
             { membreId: 5, montant: 60 }
         ]
-    },
-    {
-        id: 4,
-        groupeId: 2,
-        titre: "Internet",
-        montant: 200,
-        categorie: "Abonnement",
-        date: "2026-11-01",
-        payeurId: 5,
-        parts: [
-            { membreId: 4, montant: 100 },
-            { membreId: 5, montant: 100 }
-        ]
-    }
+    }   
 ];
+
+const depensesForm = document.getElementById("expense-form");
+const expenseTitle = document.getElementById("expense-title");
+const montantInput = document.getElementById("amount");
+const categorieSelect = document.getElementById("category-select") ;
+const dateInput = document.getElementById("category-select");
+const paymentSelect = document.getElementById("payment-select")
+let depenseId = Date.now();
+let memberId = membres.memberId;
+
+if (depensesForm) {
+  depensesForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let depenseIdCounter = depenseId++;
+    let payeurIdCounter = payeurId++;
+    const expenseTitleValue = expenseTitle.value;
+    const montantInputValue = montantInput.value;
+    const categorieSelectValue = categorieSelect.value;
+    const dateInputValue = dateInput.value;
+    const paymentSelectValue = paymentSelect.value;
+
+    
+    const expense = {
+      depenseId : depenseIdCounter,
+      titre : expenseTitleValue,
+      montant : montantInputValue,
+      categorie : categorieSelectValue,
+      date : dateInputValue,
+      payeurId : paymentSelectValue,
+      parts:[
+        {
+            memberId : memberId,
+            montant : montantInputValue
+        }
+      ]
+    };
+    console.log(expense);
+    expenses.push(expense);
+    console.log(expenses);
+    depensesForm.reset();
+  });
+}
