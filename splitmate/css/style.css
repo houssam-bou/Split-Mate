@@ -32,6 +32,14 @@ button {
 
 }
 
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0px;
+    text-align: none;
+}
 .navi a {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
