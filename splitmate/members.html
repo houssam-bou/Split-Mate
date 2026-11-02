@@ -9,18 +9,22 @@
 </head>
 
 <body>
-    <header>
-        <div>
+    <header class="HEAder">
+        <div class="pic">
             <img class="logo" src="/splitmate/assets/logo splitmate.png" alt="logo Splitmate">
             <p>SplitMate</p>
         </div>
         <div>
-            <nav>
-                <a href="/splitmate/index.html">Dashboard</a>
-                <a href="/splitmate/depenses.html">Depenses</a>
-                <a href="/splitmate/groupes.html">Groupes</a>
-                <a href="/splitmate/members.html">Members</a>
-                <a href="/splitmate/solde.html">Soldes</a>
+            <nav class="nav-bar">
+                <ul>
+
+                    <li> <a href="/splitmate/index.html">Dashboard</a></li>
+                    <li> <a href="/splitmate/depenses.html">Depenses</a></li>
+                    <li> <a href="/splitmate/groupes.html">Groupes</a></li>
+                    <li> <a href="/splitmate/members.html">Members</a></li>
+                    <li> <a href="/splitmate/solde.html">Soldes</a>
+                    </li>
+                </ul>
             </nav>
         </div>
         <div>
@@ -44,12 +48,12 @@
                     <br>
                     <br>
                     <br>
-                    <button id="ajouter-membre" type="submit">Ajouter</button>
-                    <button id="annuler-membre" type="button">Annuler</button>
+                    <button id="cancel-button">Annuler</button>
+                    <button id="add-member">Créer</button>
                 </div>
             </form>
         </section>
-        <section >
+        <section>
             <div id="membre-container">
 
             </div>
