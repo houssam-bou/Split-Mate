@@ -1,22 +1,22 @@
 import { groups } from "./groupes.js"
+
 export let membres = [
     {
-        id: 25,
-        groupeId: 5,
+        memberId: 14523415123,
+        groupeId: 1,
         nomMembre: "houssam",
         pseudo: "roubio",
     },
     {
-        id: 7,
-        groupeId: 15,
+        memberId: 16514641611,
+        groupeId: 2,
         nomMembre: "bounar",
         pseudo: "roubio12",
     },
     {
-        id: 15,
+        memberId: 561641641646,
         groupeId: 3,
         nomMembre: "yassine",
         pseudo: "roubio17",
     }
-
 ]
