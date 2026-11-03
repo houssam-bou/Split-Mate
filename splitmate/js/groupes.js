@@ -1,34 +1,5 @@
 
-export let groups = [
-  {
-    groupeId: 1,
-    nom: "taghazout groupe",
-    description: "taghazout",
-    devise: "EUR",
-    dateDebut: "2000-05-05",
-  },
-  {
-    groupeId: 2,
-    nom: "marrakech groupe",
-    description: "marrakech",
-    devise: "MAD",
-    dateDebut: "2001-03-05",
-  },
-  {
-    groupeId: 3,
-    nom: "Youssoufia groupe",
-    description: "youssoufia",
-    devise: "USD",
-    dateDebut: "2002-04-05",
-  },
-];
-let groupesForm = document.getElementById("groupes-form");
-const groupeName = document.getElementById("groupe-name");
-const groupeDescription = document.getElementById("groupe-description");
-const deviseSelect = document.getElementById("devise-select");
-const dateGroupes = document.getElementById("date-groupes");
-const groupesList = document.getElementById("groupes-container");
-let groupeIdCounter = Date.now();
+import { groups, groupesForm, groupeName, groupeDescription, deviseSelect, dateGroupes, groupesList, groupeIdCounter } from "./ui.js"
 
 if (groupesForm) {
   groupesForm.addEventListener("submit", function (event) {
@@ -59,10 +30,6 @@ function displayGroupes(groups) {
     return
   };
   groupesList.innerHTML = "";
-  if (groups.length <= 0) {
-    alert("empty !!");
-    return;
-  }
   groups.forEach(groupe => {
     groupesList.innerHTML += `
                 <li data-id = "${groupe.groupeId}">
