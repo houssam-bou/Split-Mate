@@ -1,16 +1,16 @@
 
-import { groups, groupesForm, groupeName, groupeDescription, deviseSelect, dateGroupes, groupesList, groupeIdCounter } from "./ui.js"
-
+import { groups, groupesForm, groupeName, groupeDescription, deviseSelect, dateGroupes, groupesList } from "./ui.js"
+let groupeIdCounter = Date.now();
 if (groupesForm) {
   groupesForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    const groupeId = groupeIdCounter++;
+    let groupeId = groupeIdCounter++;
     const nom = groupeName.value;
     const description = groupeDescription.value;
     const devise = deviseSelect.value;
     const date = dateGroupes.value;
 
-    const groupe = {
+    let groupe = {
       groupeId: groupeId,
       nom: nom,
       description: description,
@@ -22,7 +22,7 @@ if (groupesForm) {
     console.log(groups);
     groupesForm.reset();
     displayGroupes(groups);
-    deleteGroupeButton()
+    deleteGroupeButton();
   });
 }
 function displayGroupes(groups) {
