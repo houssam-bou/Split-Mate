@@ -7,7 +7,7 @@ const dashboardDepensesTotal = document.getElementById("dashboard-depenses-total
 export { dashboardDepensesTotal, dashboardGroupCount, dashboardMembreCount };
 
 //export groupes
-let groups = [
+const groups = [
     {
         groupeId: 1,
         nom: "taghazout groupe",
@@ -36,9 +36,9 @@ const groupeDescription = document.getElementById("groupe-description");
 const deviseSelect = document.getElementById("devise-select");
 const dateGroupes = document.getElementById("date-groupes");
 const groupesList = document.getElementById("groupes-container");
-let groupeIdCounter = Date.now();
+// let groupeIdCounter = Date.now();
 
-export { groups, groupesForm, groupeName, groupeDescription, deviseSelect, dateGroupes, groupesList, groupeIdCounter };
+export { groups, groupesForm, groupeName, groupeDescription, deviseSelect, dateGroupes, groupesList };
 
 //export members 
 
@@ -115,7 +115,6 @@ const montantInput = document.getElementById("amount");
 const categorieSelect = document.getElementById("category-select") ;
 const dateInput = document.getElementById("category-select");
 const paymentSelect = document.getElementById("payment-select");
-let depenseId = Date.now();
 let memberId = membres.memberId;
 let payeurId = "You";
-export {depensesForm, expenseTitle,montantInput, categorieSelect, dateInput, paymentSelect,depenseId, memberId, payeurId}
+export {depensesForm, expenseTitle,montantInput, categorieSelect, dateInput, paymentSelect, memberId, payeurId}
