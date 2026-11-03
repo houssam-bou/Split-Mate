@@ -73,7 +73,7 @@ export const expenses = [
         montant: 300,
         categorie: "Alimentation",
         date: "2026-10-28",
-        payeurId: 1,
+        payeurId: "You",
         parts: [
             { membreId: 1, montant: 100 },
             { membreId: 2, montant: 100 },
@@ -87,7 +87,7 @@ export const expenses = [
         montant: 180,
         categorie: "Restaurant",
         date: "2026-10-30",
-        payeurId: 2,
+        payeurId: "You",
         parts: [
             { membreId: 1, montant: 60 },
             { membreId: 2, montant: 60 },
@@ -101,7 +101,7 @@ export const expenses = [
         montant: 120,
         categorie: "Transport",
         date: "2026-10-31",
-        payeurId: 4,
+        payeurId: "You",
         parts: [
             { membreId: 4, montant: 60 },
             { membreId: 5, montant: 60 }
@@ -115,6 +115,7 @@ const montantInput = document.getElementById("amount");
 const categorieSelect = document.getElementById("category-select") ;
 const dateInput = document.getElementById("category-select");
 const paymentSelect = document.getElementById("payment-select");
+const depensesList = document.getElementById("depenses-container");
 let memberId = membres.memberId;
 let payeurId = "You";
-export {depensesForm, expenseTitle,montantInput, categorieSelect, dateInput, paymentSelect, memberId, payeurId}
+export {depensesForm, expenseTitle,montantInput, categorieSelect, dateInput, paymentSelect, memberId, payeurId, depensesList}
