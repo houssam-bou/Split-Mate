@@ -1,6 +1,4 @@
-import { groups } from "./ui.js";
-import { membres } from "./membres.js";
-import { expenses } from "./depenses.js";
+import { groups ,membres, expenses} from "./ui.js";
 import { dashboardDepensesTotal,dashboardMembreCount,dashboardGroupCount } from "./ui.js";
 
 
@@ -12,10 +10,10 @@ function calculateTotalAmount() {
     dashboardDepensesTotal.textContent = `${totalAmount} DH`;
 }
 function displayDashboard() {
-
+    
     dashboardGroupCount.textContent = groups.length;
     dashboardMembreCount.textContent = membres.length;
     calculateTotalAmount();
 }
-displayDashboard();
 
+displayDashboard();
