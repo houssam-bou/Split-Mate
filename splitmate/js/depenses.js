@@ -1,10 +1,10 @@
 import { membres } from "./ui.js";
 import {
-    expenses, depensesForm, expenseTitle, montantInput, categorieSelect, dateInput, paymentSelect
+    expenses, depensesForm, expenseTitle, montantInput, categorieSelect, dateInput, paymentSelect,payeurId, memberId
 } from "./ui.js";
 
 
-
+let depenseId = Date.now();
 if (depensesForm) {
   depensesForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -37,4 +37,3 @@ if (depensesForm) {
     console.log(expenses);
     depensesForm.reset();
   });
-}
