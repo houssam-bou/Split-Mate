@@ -56,7 +56,7 @@
                         <input id="date-input" type="date" name="date" min="1990-01-01" max="2027-01-01" />
                     </label>
                     <br>
-                    <label for="payment">Paid by</label>
+                    <label for="payment-select">Paid by</label>
                     <select name="payment" id="payment-select">
                         <option value="You">You</option>
                     </select>
@@ -67,13 +67,13 @@
             </form>
         </section>
         <section>
-            
-<div class="depenses-container">
-                    <h1>Liste de Groupes</h1>
-                </div>
-                <div id="groupes-container">
 
-                </div>
+            <div class="liste-de-depenses">
+                <h1>Liste de depenses</h1>
+            </div>
+            <div id="depenses-container">
+
+            </div>
         </section>
 
     </main>
@@ -81,5 +81,8 @@
 
 
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/depenses.js"></script>
+    <script type="module" src="./js/ui.js"></script>
 </body>
+
 </html>
