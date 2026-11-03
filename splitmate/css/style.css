@@ -488,7 +488,8 @@ button {
     font-family: sans-serif;
 }
 
-.liste_de_groupe h1 {
+.liste_de_groupe h1 ,
+.liste-de-depenses h1{
     color: #ccc;
     font-family: sans-serif;
     display: flex;
