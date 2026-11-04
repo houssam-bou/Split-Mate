@@ -1,45 +1,16 @@
 
-export let groups = [
-  {
-    groupeId: 1,
-    nom: "taghazout groupe",
-    description: "taghazout",
-    devise: "EUR",
-    dateDebut: "2000-05-05",
-  },
-  {
-    groupeId: 2,
-    nom: "marrakech groupe",
-    description: "marrakech",
-    devise: "MAD",
-    dateDebut: "2001-03-05",
-  },
-  {
-    groupeId: 3,
-    nom: "Youssoufia groupe",
-    description: "youssoufia",
-    devise: "USD",
-    dateDebut: "2002-04-05",
-  },
-];
-let groupesForm = document.getElementById("groupes-form");
-const groupeName = document.getElementById("groupe-name");
-const groupeDescription = document.getElementById("groupe-description");
-const deviseSelect = document.getElementById("devise-select");
-const dateGroupes = document.getElementById("date-groupes");
-const groupesList = document.getElementById("groupes-container");
+import { groups, groupesForm, groupeName, groupeDescription, deviseSelect, dateGroupes, groupesList } from "./ui.js"
 let groupeIdCounter = Date.now();
-
 if (groupesForm) {
   groupesForm.addEventListener("submit", function (event) {
     event.preventDefault();
-    const groupeId = groupeIdCounter++;
+    let groupeId = groupeIdCounter++;
     const nom = groupeName.value;
     const description = groupeDescription.value;
     const devise = deviseSelect.value;
     const date = dateGroupes.value;
 
-    const groupe = {
+    let groupe = {
       groupeId: groupeId,
       nom: nom,
       description: description,
@@ -51,7 +22,7 @@ if (groupesForm) {
     console.log(groups);
     groupesForm.reset();
     displayGroupes(groups);
-    deleteGroupeButton()
+    deleteGroupeButton();
   });
 }
 function displayGroupes(groups) {
@@ -59,10 +30,6 @@ function displayGroupes(groups) {
     return
   };
   groupesList.innerHTML = "";
-  if (groups.length <= 0) {
-    alert("empty !!");
-    return;
-  }
   groups.forEach(groupe => {
     groupesList.innerHTML += `
                 <li data-id = "${groupe.groupeId}">

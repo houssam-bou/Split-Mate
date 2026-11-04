@@ -1,57 +1,62 @@
+import { membres } from "./ui.js";
+import {
+  expenses, depensesForm, expenseTitle, montantInput, categorieSelect, dateInput, paymentSelect, memberId, depensesList
+} from "./ui.js";
 
-export const expenses = [
-    {
-        id: 1,
-        groupeId: 1,
-        titre: "Courses alimentaires",
-        montant: 300,
-        categorie: "Alimentation",
-        date: "2026-10-28",
-        payeurId: 1,
-        parts: [
-            { membreId: 1, montant: 100 },
-            { membreId: 2, montant: 100 },
-            { membreId: 3, montant: 100 }
-        ]
-    },
-    {
-        id: 2,
-        groupeId: 1,
-        titre: "Restaurant",
-        montant: 180,
-        categorie: "Restaurant",
-        date: "2026-10-30",
-        payeurId: 2,
-        parts: [
-            { membreId: 1, montant: 60 },
-            { membreId: 2, montant: 60 },
-            { membreId: 3, montant: 60 }
-        ]
-    },
-    {
-        id: 3,
-        groupeId: 2,
-        titre: "Transport",
-        montant: 120,
-        categorie: "Transport",
-        date: "2026-10-31",
-        payeurId: 4,
-        parts: [
-            { membreId: 4, montant: 60 },
-            { membreId: 5, montant: 60 }
-        ]
-    },
-    {
-        id: 4,
-        groupeId: 2,
-        titre: "Internet",
-        montant: 200,
-        categorie: "Abonnement",
-        date: "2026-11-01",
-        payeurId: 5,
-        parts: [
-            { membreId: 4, montant: 100 },
-            { membreId: 5, montant: 100 }
-        ]
-    }
-];
+
+let depenseId = Date.now();
+if (depensesForm) {
+  depensesForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let depenseIdCounter = depenseId++;
+    let payeurId = "You";
+    const expenseTitleValue = expenseTitle.value;
+    const montantInputValue = montantInput.value;
+    const categorieSelectValue = categorieSelect.value;
+    const dateInputValue = dateInput.value;
+    const paymentSelectValue = paymentSelect.value;
+    let expense = {
+      depenseId: depenseIdCounter,
+      titre: expenseTitleValue,
+      montant: montantInputValue,
+      categorie: categorieSelectValue,
+      date: dateInputValue,
+      payeurId: payeurId,
+      parts: [
+        {
+          memberId: memberId,
+          montant: montantInputValue
+        }
+      ]
+    };
+    console.log(expense);
+    expenses.push(expense);
+    console.log(expenses);
+    depensesForm.reset();
+
+    displayDepenses(expenses);
+  });
+  };
+function displayDepenses(expenses) {
+  depensesList.innerHTML = "";
+  expenses.forEach(expense => {
+    depensesList.innerHTML += `
+                <li data-id = "${expense.depenseId}">
+                <div id="div-name">
+                  <h3>${expense.titre}</h3>
+                  <p>depense id : ${expense.depenseId}</p>
+                  </div>
+                  <p>montant : ${expense.montant}DH</p>
+                  <div>
+                  <p>categorie : ${expense.categorie}</p>
+                  <p>la date de debute : ${expense.date}</p>
+                </div>
+                <div id="div-delete">
+                   <span class="group-currency">payeur id : ${expense.payeurId}</span>
+                  <button data-id = "${expense.depenseId}">Delete</button>
+                </div>
+              </li>
+          `
+  });
+}
+displayDepenses(expenses);
