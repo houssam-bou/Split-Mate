@@ -1,6 +1,6 @@
 import { membres } from "./ui.js";
 import {
-    expenses, depensesForm, expenseTitle, montantInput, categorieSelect, dateInput, paymentSelect, payeurId, memberId, depensesList
+  expenses, depensesForm, expenseTitle, montantInput, categorieSelect, dateInput, paymentSelect, memberId, depensesList
 } from "./ui.js";
 
 
@@ -9,39 +9,36 @@ if (depensesForm) {
   depensesForm.addEventListener("submit", function (event) {
     event.preventDefault();
     let depenseIdCounter = depenseId++;
-    let payeurIdCounter = payeurId++;
+    let payeurId = "You";
     const expenseTitleValue = expenseTitle.value;
     const montantInputValue = montantInput.value;
     const categorieSelectValue = categorieSelect.value;
     const dateInputValue = dateInput.value;
     const paymentSelectValue = paymentSelect.value;
-    let part = montant / membres.length;
+    let expense = {
+      depenseId: depenseIdCounter,
+      titre: expenseTitleValue,
+      montant: montantInputValue,
+      categorie: categorieSelectValue,
+      date: dateInputValue,
+      payeurId: payeurId,
+      parts: [
+        {
+          memberId: memberId,
+          montant: montantInputValue
+        }
+      ]
+    };
+    console.log(expense);
+    expenses.push(expense);
+    console.log(expenses);
+    depensesForm.reset();
 
-        let expense = {
-            depenseId: depenseIdCounter,
-            titre: expenseTitleValue,
-            montant: montantInputValue,
-            categorie: categorieSelectValue,
-            date: dateInputValue,
-            payeurId: payeurId,
-            parts: [
-                {
-                    memberId: memberId,
-                    montant: montantInputValue
-                }
-            ]
-        };
-        console.log(expense);
-        expenses.push(expense);
-        console.log(expenses);
-        depensesForm.reset();
-
-        displayDepenses(expenses);
-      
-      });
-  }
+    displayDepenses(expenses);
+  });
+  };
 function displayDepenses(expenses) {
- depensesList.innerHTML = "";
+  depensesList.innerHTML = "";
   expenses.forEach(expense => {
     depensesList.innerHTML += `
                 <li data-id = "${expense.depenseId}">
