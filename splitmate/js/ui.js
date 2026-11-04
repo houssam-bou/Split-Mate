@@ -65,7 +65,7 @@ export { groups, groupesForm, groupeName, groupeDescription, deviseSelect, dateG
 export {membres};
 
 //export expenses
-export const expenses = [
+export let expenses = [
     {
         depenseId: 1,
         groupeId: 1,
@@ -109,11 +109,16 @@ export const expenses = [
     }   
 ];
 
+
+export function mutateExpenses(newArray){
+    return expenses  = newArray;
+}
+
 const depensesForm = document.getElementById("expense-form");
 const expenseTitle = document.getElementById("expense-title");
 const montantInput = document.getElementById("amount");
 const categorieSelect = document.getElementById("category-select") ;
-const dateInput = document.getElementById("category-select");
+const dateInput = document.getElementById("date-input");
 const paymentSelect = document.getElementById("payment-select");
 const depensesList = document.getElementById("depenses-container");
 let memberId = membres.memberId;
