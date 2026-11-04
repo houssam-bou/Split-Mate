@@ -1,6 +1,6 @@
 import { membres } from "./ui.js";
 import {
-  expenses, depensesForm, expenseTitle, montantInput, categorieSelect, dateInput, paymentSelect, memberId, depensesList
+  expenses, mutateExpenses, depensesForm, expenseTitle, montantInput, categorieSelect, dateInput, paymentSelect, memberId, depensesList
 } from "./ui.js";
 
 
@@ -10,22 +10,18 @@ if (depensesForm) {
     event.preventDefault();
     let depenseIdCounter = depenseId++;
     let payeurId = "You";
-    const expenseTitleValue = expenseTitle.value;
-    const montantInputValue = montantInput.value;
-    const categorieSelectValue = categorieSelect.value;
-    const dateInputValue = dateInput.value;
     const paymentSelectValue = paymentSelect.value;
     let expense = {
       depenseId: depenseIdCounter,
-      titre: expenseTitleValue,
-      montant: montantInputValue,
-      categorie: categorieSelectValue,
-      date: dateInputValue,
+      titre: expenseTitle.value,
+      montant: montantInput.value,
+      categorie: categorieSelect.value,
+      date: dateInput.value,
       payeurId: payeurId,
       parts: [
         {
           memberId: memberId,
-          montant: montantInputValue
+          montant: montantInput.value
         }
       ]
     };
@@ -35,8 +31,9 @@ if (depensesForm) {
     depensesForm.reset();
 
     displayDepenses(expenses);
+    deleteDepenseButton();
   });
-  };
+};
 function displayDepenses(expenses) {
   depensesList.innerHTML = "";
   expenses.forEach(expense => {
@@ -46,8 +43,8 @@ function displayDepenses(expenses) {
                   <h3>${expense.titre}</h3>
                   <p>depense id : ${expense.depenseId}</p>
                   </div>
+                  <div> 
                   <p>montant : ${expense.montant}DH</p>
-                  <div>
                   <p>categorie : ${expense.categorie}</p>
                   <p>la date de debute : ${expense.date}</p>
                 </div>
@@ -59,4 +56,27 @@ function displayDepenses(expenses) {
           `
   });
 }
+function deleteDepenseButton() {
+
+  let deleteDepenseBtns = depensesList.querySelectorAll("button");
+  deleteDepenseBtns.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      console.log(e.target);
+
+      let deletedDepenseId = e.target.getAttribute("data-id");
+      console.log(deletedDepenseId, "you cliceked ");
+
+
+      let newExpenses = expenses.filter((expense) => expense.depenseId != deletedDepenseId);
+
+      mutateExpenses(newExpenses)
+
+      displayDepenses(newExpenses);
+      deleteDepenseButton();
+    });
+  });
+}
+
+
 displayDepenses(expenses);
+deleteDepenseButton();
