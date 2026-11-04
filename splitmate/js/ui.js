@@ -117,5 +117,4 @@ const dateInput = document.getElementById("category-select");
 const paymentSelect = document.getElementById("payment-select");
 const depensesList = document.getElementById("depenses-container");
 let memberId = membres.memberId;
-let payeurId = "You";
-export {depensesForm, expenseTitle,montantInput, categorieSelect, dateInput, paymentSelect, memberId, payeurId, depensesList}
+export {depensesForm, expenseTitle,montantInput, categorieSelect, dateInput, paymentSelect, memberId, depensesList}
