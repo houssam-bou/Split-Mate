@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>membres</title>
+    <link rel="stylesheet" href="/splitmate/css/style.css">
+</head>
+
+<body>
+    <header class="HEAder">
+        <div class="pic">
+            <img class="logo" src="/splitmate/assets/logo splitmate.png" alt="logo Splitmate">
+            <p>SplitMate</p>
+        </div>
+        <div>
+            <nav class="nav-bar">
+                <ul>
+
+                    <li> <a href="/splitmate/index.html">Dashboard</a></li>
+                    <li> <a href="/splitmate/depenses.html">Depenses</a></li>
+                    <li> <a href="/splitmate/groupes.html">Groupes</a></li>
+                    <li> <a href="/splitmate/members.html">Members</a></li>
+                    <li> <a href="/splitmate/solde.html">Soldes</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <button><a href="#section-ajouter-membre">+ ajouter un membre</a></button>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1 class="crer-un-groupe">ajouter un membre</h1>
+        </div>
+        <section id="section-ajouter-membre">
+            <form id="members-form">
+                <div>
+                    <label for="nom-du-membre">Nom</label>
+                    <input type="text" id="nom-du-membre">
+
+                    <br>
+                    <label for="pseudo-du-membre">Pseudo</label>
+                    <input type="text" id="pseudo-du-membre">
+                    
+                    <label for="Selection">select votre groupe:</label>
+                    <select id="Select-Groupe">
+                        <option value="groupe1">Groupe1</option>
+                        <option value="groupe2">Groupe2</option>
+                        <option value="groupe3">Groupe3</option>
+                    </select>
+                    <br>
+
+                    <button type="button" id="cancel-button">Annuler</button>
+                    <button type="submit" id="add-member">Créer</button>
+                </div>
+            </form>
+        </section>
+        <section>
+            <div id="membre-container">
+
+            </div>
+        </section>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+</body>

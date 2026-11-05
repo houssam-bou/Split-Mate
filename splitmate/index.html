@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="Header">
+        <div class="logo">
+            <img src="assets/image.png">
+        </div>
+        <div class="navi">
+            <nav>
+                <ul>
+                    <li><a href="/splitmate/index.html">Dashboard</a></li>
+                    <li><a href="/splitmate/depenses.html">Depenses</a></li>
+                    <li><a href="/splitmate/groupes.html">Groupes</a></li>
+                    <li><a href="/splitmate/members.html">Members</a></li>
+                    <li><a href="/splitmate/solde.html">soldes</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <button>+ Add Expense</button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="kio">
+                <p>VU D'ENSEMBLE</p>
+                <h1>Ton argent, en un coup d'oeil</h1>
+                <p>retrouve içi le résumé de tes groupes,dépenses et remboursements.</p>
+            </div>
+        </section>
+        <section>
+            <div class="hero-container">
+                <div class="BRDR1">
+                    <p>Groupes</p>
+                    <h2 id="dashboard-groupes-count">0</h2>
+                    <a href="/splitmate/groupes.html">voir les Groupes</a>
+                </div>
+                <div class="BRDR2">
+                    <p>membres</p>
+                    <h2 id="dashboard-members-count">0</h2>
+                    <a href="/splitmate/members.html">voir les membres</a>
+                </div>
+                <div class="BRDR3">
+                    <p>total des depenses</p>
+                    <h2 id="dashboard-depenses-total">0 DH</h2>
+                    <a href="/splitmate/depenses.html">voir les depenses</a>
+                </div>
+                
+            </div>
+        </section>
+        <div class="para">
+            <h2>Accès rapide</h2>
+        </div>
+        <section>
+            <div class="acces-rapide-container">
+                <nav>
+                    <div>
+                        <button id="button-groupes"><a href="/splitmate/groupes.html">Gerer les groupes</a></button>
+                        <button id="button-membres"><a href="/splitmate/members.html">Gerer les membres</a></button>
+                    </div>
+                    <div>
+                        <button id="button-depenses"><a href="/splitmate/depenses.html">Gerer les depenses</a></button>
+                        <button id="button-consulter-solde"><a href="/splitmate/solde.html">Consulter les
+                                soldes</a></button>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/ui.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>groupes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="HEAder">
+        <div class="pic">
+            <img src="assets/image.png">
+        </div>
+        <div class="navi">
+            <nav>
+                <ul>
+                    <li><a href="/splitmate/index.html">Dashboard</a></li>
+                    <li><a href="/splitmate/depenses.html">Depenses</a></li>
+                    <li><a href="/splitmate/groupes.html">Groupes</a></li>
+                    <li><a href="/splitmate/members.html">Members</a></li>
+                    <li><a href="/splitmate/solde.html">Soldes</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <button><a href="#section-ajouter-groupe">+ ajouter un groupe</a></button>
+        </div>
+    </header>
+
+
+        <main>
+            <div class="crer-un-groupe">
+                <h1>Créer un groupe</h1>
+            </div>
+            <section id="section-ajouter-groupe">
+                <form id="groupes-form">
+                    <div>
+                        <label for="groupe-name">Nom du groupe</label>
+                        <input type="text" id="groupe-name">
+                        <br>
+                        <label for="groupe-description">Description</label>
+                        <input type="text" id="groupe-description">
+                        <br>
+                        <label for="devise-select">Devise</label>
+                        <select  id="devise-select">
+                            <option value="MAD">MAD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="USD">USD</option>
+                        </select>
+                        <br>
+                        <label for="date-groupes">
+                            Date
+                            <input id="date-groupes" type="date" min="1990-01-01" max="2017-01-01" />
+                        </label>
+                        <br>
+                        <button id="cancel-button">Annuler</button>
+                        <button id="add-expense">Créer</button>
+                    </div>
+                </form>
+            </section>
+            <section>
+                <div class="liste_de_groupe">
+                    <h1>Liste de Groupes</h1>
+                </div>
+                <div id="groupes-container">
+
+                </div>
+            </section>
+        </main>
+        <script type="module" src="./js/main.js"></script>
+        <script type="module" src="./js/groupes.js"></script>
+        <script type="module" src="./js/ui.js"></script>
+    </body>
+</html>

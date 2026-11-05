@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>depenses</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="photo">
+            <img src="assets/image.png">
+        </div>
+        <div class="navi">
+            <nav>
+                <ul>
+                    <li><a href="/splitmate/index.html">Dashboard</a></li>
+                    <li><a href="/splitmate/depenses.html">Depenses</a></li>
+                    <li><a href="/splitmate/groupes.html">Groupes</a></li>
+                    <li><a href="/splitmate/members.html">Members</a></li>
+                    <li><a href="/splitmate/solde.html"></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <button><a href="/splitmate/depenses.html">+ Add Expense</a></button>
+        </div>
+    </header>
+    <main>
+        <div class="crer-un-depense">
+            <h1>Créer un depense</h1>
+        </div>
+        <section class="contenue">
+            <form id="expense-form">
+                <div>
+                    <div class="partie1">
+                        <label for="expense-title">Expense Title</label>
+                        <input type="text" id="expense-title">
+                    </div>
+                    <br>
+                    <label for="amount">amount</label>
+                    <input type="number" name="number" id="amount">
+                    <br>
+                    <label for="category-select">Category</label>
+                    <select name="category" id="category-select">
+                        <option value="">Select category</option>
+                        <option value="food">Food</option>
+                        <option value="transport">Transport</option>
+                        <option value="housing">Housing</option>
+                        <option value="activities">Activities</option>
+                    </select>
+                    <label>
+                        Date
+                        <input id="date-input" type="date" name="date" min="1990-01-01" max="2027-01-01" />
+                    </label>
+                    <br>
+                    <label for="payment-select">Paid by</label>
+                    <select name="payment" id="payment-select">
+                        <option value="You">You</option>
+                    </select>
+                    <br>
+                    <button id="cancel-button">Cancel</button>
+                    <button id="add-expense">+ Add Expense</button>
+                </div>
+            </form>
+        </section>
+        <section>
+
+            <div class="liste-de-depenses">
+                <h1>Liste de depenses</h1>
+            </div>
+            <div id="depenses-container">
+
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/depenses.js"></script>
+    <script type="module" src="./js/ui.js"></script>
+</body>
+
+</html>
