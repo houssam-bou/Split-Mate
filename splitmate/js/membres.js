@@ -1,4 +1,4 @@
-import { groups } from "./groupes.js"
+import { groups , membres} from "./ui.js"
 export let membres = [
     {
         id: 25,
@@ -71,3 +71,4 @@ membres.forEach(function (membre) {
      membresForm.reset();
     
 });
+

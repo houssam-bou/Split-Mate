@@ -37,22 +37,22 @@
             <section id="section-ajouter-groupe">
                 <form id="groupes-form">
                     <div>
-                        <label for="nom-du-groupe">Nom du groupe</label>
+                        <label for="groupe-name">Nom du groupe</label>
                         <input type="text" id="groupe-name">
                         <br>
-                        <label for="description-groupe">Description</label>
+                        <label for="groupe-description">Description</label>
                         <input type="text" id="groupe-description">
                         <br>
-                        <label for="devise-select-groupe">Devise</label>
-                        <select name="devise" id="devise-select">
+                        <label for="devise-select">Devise</label>
+                        <select  id="devise-select">
                             <option value="MAD">MAD</option>
                             <option value="EUR">EUR</option>
                             <option value="USD">USD</option>
                         </select>
                         <br>
-                        <label>
+                        <label for="date-groupes">
                             Date
-                            <input id="date-groupes" type="date" name="date" min="1990-01-01" max="2017-01-01" />
+                            <input id="date-groupes" type="date" min="1990-01-01" max="2017-01-01" />
                         </label>
                         <br>
                         <button id="cancel-button">Annuler</button>
@@ -70,5 +70,7 @@
             </section>
         </main>
         <script type="module" src="./js/main.js"></script>
-        
+        <script type="module" src="./js/groupes.js"></script>
+        <script type="module" src="./js/ui.js"></script>
     </body>
+</html>
