@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -38,18 +38,23 @@
         <section id="section-ajouter-membre">
             <form id="members-form">
                 <div>
-                    <label for="nom">Nom</label>
+                    <label for="nom-du-membre">Nom</label>
                     <input type="text" id="nom-du-membre">
+
                     <br>
+                    <label for="pseudo-du-membre">Pseudo</label>
+                    <input type="text" id="pseudo-du-membre">
+                    
+                    <label for="Selection">select votre groupe:</label>
+                    <select id="Select-Groupe">
+                        <option value="groupe1">Groupe1</option>
+                        <option value="groupe2">Groupe2</option>
+                        <option value="groupe3">Groupe3</option>
+                    </select>
                     <br>
-                    <br>
-                    <label for="pseudo">Pseudo</label>
-                    <input type="text" id="nom-du-membre">
-                    <br>
-                    <br>
-                    <br>
-                    <button id="cancel-button">Annuler</button>
-                    <button id="add-member">Créer</button>
+
+                    <button type="button" id="cancel-button">Annuler</button>
+                    <button type="submit" id="add-member">Créer</button>
                 </div>
             </form>
         </section>

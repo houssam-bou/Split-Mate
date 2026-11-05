@@ -37,34 +37,26 @@ function displayGroupes(groups) {
                   <h3>${groupe.nom}</h3>
                   <p>Groupe Id : ${groupe.groupeId}</p>
                   </div>
-                  <div>
-                  <p>${groupe.description}</p>
-                  <p>la date de debute : ${groupe.dateDebut}</p>
-                </div>
-                <div id="div-delete">
-                   <span class="group-currency">Devise : ${groupe.devise}</span>
-                  <button data-id = "${groupe.groupeId}">Delete</button>
-                </div>
-              </li>
-          `
-  });
-}
-function deleteGroupeButton() {
-  if (!groupesList) {
-    return;
-  };
-  let deleteGroupeBtns = groupesList.querySelectorAll("button");
-  deleteGroupeBtns.forEach((btn) => {
-    btn.addEventListener("click", function (e) {
-      let deletedGroupeId = e.target.getAttribute("data-id");
-
-      groups = groups.filter((groupe) => groupe.groupeId != deletedGroupeId);
-
-      displayGroupes(groups);
-      deleteGroupeButton();
+                </li>
+            `
     });
-  });
-}
+  }
+  function deleteGroupeButton() {
+    if (!groupesList) {
+      return;
+    };
+    let deleteGroupeBtns = groupesList.querySelectorAll("button");
+    deleteGroupeBtns.forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        let deletedGroupeId = e.target.getAttribute("data-id");
 
-displayGroupes(groups);
-deleteGroupeButton();
+        groups = groups.filter((groupe) => groupe.groupeId != deletedGroupeId);
+
+        displayGroupes(groups);
+        deleteGroupeButton();
+      });
+    });
+  }
+
+  displayGroupes(groups);
+  deleteGroupeButton();

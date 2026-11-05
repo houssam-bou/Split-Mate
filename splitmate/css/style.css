@@ -317,7 +317,16 @@ button a {
     color: white;
     font-family: sans-serif;
 }
-
+ #members-form select {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white;
+    color: #222;
+    font-size: 18px;
+} 
 #expense-form {
     display: flex;
     flex-direction: column;
@@ -506,3 +515,5 @@ button {
     display: flex;
     justify-content: center;
 }
+
+
